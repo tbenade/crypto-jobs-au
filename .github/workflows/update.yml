@@ -10,5 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Get data
+      run: /usr/bin/curl https://jobsearch-api.cloud.seek.co.nz/search?keywords=crypto
       run: |
         echo "Getting data"
