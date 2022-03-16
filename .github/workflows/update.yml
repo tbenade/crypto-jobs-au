@@ -1,0 +1,14 @@
+name: Update data
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: '0 8 * * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get data
+      run: |
+        echo "Getting data"
