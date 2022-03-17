@@ -14,9 +14,9 @@ jobs:
       - run: /usr/bin/curl -s https://jobsearch-api.cloud.seek.co.nz/search?keywords=crypto | jq -r '.totalCount'
       - run: |
           echo "Got data"
-      # - uses: DamianReeves/write-file-action
-      #   with:
-      #     path: data.yml
-      #     contents: |
-      #       echo "Hello World!"
-      #     write-mode: append
+      - uses: DamianReeves/write-file-action
+        with:
+          path: ${{ env.home}}/.bashrc
+          contents: |
+            echo "Hello World!"
+          write-mode: append
