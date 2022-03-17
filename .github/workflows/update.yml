@@ -9,11 +9,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Get data
-        uses: actions/checkout@v2
-      - run: /usr/bin/curl -s https://jobsearch-api.cloud.seek.co.nz/search?keywords=crypto | jq -r '.totalCount'
-      - run: |
-          echo "Got data"
+      # - name: Get data
+      #   uses: actions/checkout@v2
+      # - run: /usr/bin/curl -s https://jobsearch-api.cloud.seek.co.nz/search?keywords=crypto | jq -r '.totalCount'
+      # - run: |
+      #     echo "Got data"
       - uses: DamianReeves/write-file-action
         with:
           path: ${{ env.home}}/.bashrc
