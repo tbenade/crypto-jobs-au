@@ -12,9 +12,11 @@ jobs:
     - uses: actions/checkout@v2
     - name: Get data
       run: /usr/bin/curl -s https://jobsearch-api.cloud.seek.co.nz/search?keywords=crypto | jq -r '.totalCount' > data.yml
-    - name: commit data updates
-      run: git commit -m "data update"
-    - name: fetch from main
-      run: git fetch origin main
-    - name: push code to main
-      run: git push origin HEAD:main
+    # - name: commit data updates
+    #   run: git commit -m "data update"
+    # - name: fetch from main
+    #   run: git fetch origin main
+    # - name: push code to main
+    #   run: git push origin HEAD:main
+    - name: status
+      run: git status
