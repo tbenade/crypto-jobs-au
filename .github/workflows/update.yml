@@ -15,7 +15,7 @@ jobs:
     - name: Config git
       run: git config --local user.name "tbenade"
     - name: commit data updates
-      run: git commit -m "data update"
+      run: git commit -am "data update"
     - name: fetch from main
       run: git fetch origin main
     - name: push code to main
