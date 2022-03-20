@@ -11,4 +11,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Get data
-      run: /usr/bin/curl -s https://jobsearch-api.cloud.seek.co.nz/search?keywords=crypto | jq -r '.totalCount'
+      run: /usr/bin/curl -s https://jobsearch-api.cloud.seek.co.nz/search?keywords=crypto | jq -r '.totalCount' > data.yml
