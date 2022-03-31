@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Get data
-      run: /usr/bin/curl -s https://jobsearch-api.cloud.seek.co.nz/search?keywords=crypto | jq -r .totalCount >> data.yml
+      run: /usr/bin/curl  -s https://jobsearch-api.cloud.seek.co.nz/search?keywords=crypto | jq -r '"\(now | strftime("%Y/%M/%d")),\(.totalCount)"' >> data.yml
     - name: Config git
       run: git config --local user.name "tbenade"
     - name: commit data updates
