@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Crypto jobs in AU"
 ---
 # Crypto jobs in AU
