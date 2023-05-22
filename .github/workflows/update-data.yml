@@ -6,7 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Get data
       run: /usr/bin/curl  -s https://jobsearch-api.cloud.seek.co.nz/search?keywords=crypto | jq -r '"\(now | strftime("%d/%m/%Y")),\(.totalCount)"' >> data.csv
     - name: Config git
