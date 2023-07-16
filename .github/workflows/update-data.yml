@@ -10,9 +10,13 @@ jobs:
     - name: Get data
       run: /usr/bin/curl  -s https://www.seek.com.au/api/chalice-search/v4/search?siteKey=AU-Main&sourcesystem=houston&where=All+Australia&page=1&keywords=crypto | jq -r '"\(now | strftime("%d/%m/%Y")),\(.totalCount)"' >> data.csv
     - name: Config git
-      run: git config --local user.name "tbenade"
+      run: | 
+        git config user.name github-actions
+        git config user.email github-actions@github.com
     - name: commit data updates
-      run: git commit -am "data update"
+      run: |
+        git add .
+        git commit -am "data update"
     - name: fetch from main
       run: git fetch origin main
     - name: push code to main
