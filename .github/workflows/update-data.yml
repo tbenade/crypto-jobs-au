@@ -8,7 +8,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Get data
-      run: /usr/bin/curl  -s https://www.seek.com.au/api/chalice-search/v4/search?siteKey=AU-Main&sourcesystem=houston&where=All+Australia&page=1&keywords=crypto | jq -r '"\(now | strftime("%d/%m/%Y")),\(.totalCount)"' >> data2.csv
+      run: /usr/bin/curl  -s https://www.seek.com.au/api/chalice-search/v4/search?siteKey=AU-Main&sourcesystem=houston&where=All+Australia&page=1&keywords=crypto | jq -r '"\(now | strftime("%d/%m/%Y")),\(.totalCount)"' >> data.csv
     - name: Config git
       run: git config --local user.name "tbenade"
     - name: commit data updates
